@@ -1,0 +1,60 @@
+---
+output:
+  github_document:
+    toc: true
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = FALSE,
+  comment = "",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# 🕸  linxreport - Linx HTML Report
+
+`{linxreport}` is an R package for generating HTML reports with results from the
+`Linx` structural variant tool from the Hartwig Medical Foundation - see documentation
+for Linx at <https://github.com/hartwigmedical/hmftools/tree/master/linx>.
+
+For useful functions for parsing and processing `Linx` results, see the vignette at
+<https://umccr.github.io/linxreport/articles/linx.html>.
+
+## 📦 Installation
+
+```r
+remotes::install_github("umccr/linxreport")
+```
+
+- Or if used inside a conda environment:
+
+```bash
+conda install r-linxreport -c conda-forge -c bioconda
+```
+
+## 💻 CLI {#id_-cli}
+
+A `linxreport.R` command line interface is available for convenience.
+
+- If you're using the conda package, the `linxreport.R` command will already be set up
+  inside an activated conda environment.
+- If you're _not_ using the conda package, you need to export the
+  `linxreport/inst/cli/` directory to your `PATH` in order to use `linxreport.R`.
+
+```{bash eval=FALSE}
+linxr_cli=$(Rscript -e 'x = system.file("cli", package = "linxreport"); cat(x, "\n")' | xargs)
+export PATH="${linxr_cli}:${PATH}"
+```
+
+```{bash prompt=TRUE, echo=FALSE}
+linxr_cli=$(Rscript -e 'x = system.file("cli", package = "linxreport"); cat(x, "\n")' | xargs)
+export PATH="${linxr_cli}:${PATH}"
+echo "linxreport.R --version" & linxreport.R --version
+echo ""
+echo "#-----------------------------------#"
+echo "linxreport.R --help" & linxreport.R --help
+```
