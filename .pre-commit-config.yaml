@@ -12,11 +12,25 @@ repos:
         - mikldk/roxytest
     -   id: style-files
         args: [--style_pkg=styler, --style_fun=tidyverse_style]
-        exclude:  > 
+        exclude:  >
           (?x)^(
           tests/testthat/.*\.R|
           renv/.*
           )$
+    -   id: roxygenize
+        additional_dependencies:
+        -    assertthat
+        -    details
+        -    dplyr
+        -    DT
+        -    gtools
+        -    optparse
+        -    readr
+        -    rlang
+        -    rmarkdown
+        -    sessioninfo
+        -    stringr
+        -    roxytest
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:
