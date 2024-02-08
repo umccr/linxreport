@@ -1,0 +1,8 @@
+template:
+  bootstrap: 5
+url: https://umccr.github.io/linxreport/
+authors:
+  Peter Diakumis:
+    href: https://github.com/pdiakumis
+news:
+  one_page: true
