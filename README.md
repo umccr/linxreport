@@ -7,14 +7,7 @@ knit: (knitr::knit)
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = FALSE,
-  comment = "",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
+
 
 # 🕸  linxreport - LINX HTML Reporter
 
@@ -61,15 +54,44 @@ A `linxreport.R` command line interface is available for convenience.
 > If you're _not_ using the conda package, you need to export the
 > `linxreport/inst/cli/` directory to your `PATH` in order to use `linxreport.R`.
 
-```{bash eval=FALSE}
+
+```bash
 linxr_cli=$(Rscript -e 'x <- system.file("cli", package = "linxreport"); cat(x, "\n")' | xargs)
 export PATH="${linxr_cli}:${PATH}"
 ```
 
-```{bash prompt=TRUE, echo=FALSE}
-linxr_cli=$(Rscript -e 'x = system.file("cli", package = "linxreport"); cat(x, "\n")' | xargs)
-export PATH="${linxr_cli}:${PATH}"
-echo "linxreport.R --version" & linxreport.R --version
-echo ""
-echo "linxreport.R --help" & linxreport.R --help
+
+```
+linxreport.R --version
+0.1.0 
+
+linxreport.R --help
+Usage
+=====
+ 
+/Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/library/linxreport/cli/linxreport.R [options]
+
+
+Options
+=======
+--sample=SAMPLE
+		Sample name (REQUIRED).
+
+--plot=PLOT
+		Path to LINX plot directory (REQUIRED).
+
+--table=TABLE
+		Path to LINX table directory (REQUIRED).
+
+--out=OUT
+		HTML output file name [def: linx_{sample}.html].
+
+--quiet
+		Suppress log printing during rendering.
+
+--version, -v
+		Print version and exit.
+
+--help, -h
+		Show this help message and exit
 ```
