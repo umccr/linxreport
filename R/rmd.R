@@ -29,11 +29,11 @@ linx_rmd <- function(sample, table_dir, plot_dir, out_file = NULL, quiet = FALSE
     out_file <- paste0("linx_", sample, ".html")
   }
   tmp_dir <- tempdir()
-  rmd_dir <- system.file("rmd/linx", package = "linxreport")
+  rmd_dir <- system.file("rmd", package = "linxreport")
   cpdir(table_dir, tmp_dir)
   cpdir(plot_dir, tmp_dir)
   cpdir(rmd_dir, tmp_dir)
-  rmd_file <- file.path(tmp_dir, "linx", "linx.Rmd")
+  rmd_file <- file.path(tmp_dir, "linxreport.Rmd")
   out_dir <- dirname(out_file)
   mkdir(out_dir)
   pars <- list(
