@@ -12,13 +12,15 @@ For useful functions for parsing and processing `LINX` results, see the
 `{linxreport}` vignette at
 <https://umccr.github.io/linxreport/articles/linx.html>.
 
-> [!NOTE] {linxreport} does not run any analyses! It simply parses the
-> outputs from LINX and displays them in tables and tabs. No
-> optimisations are performed.
+> [!NOTE]
+> `{linxreport}` does not run any analyses! It simply parses the outputs
+> from LINX and displays them in tables and tabs. No optimisations are
+> performed.
 
-> [!CAUTION] The HTML report size depends on the number of LINX plots!
-> We have encountered samples with hundreds of plots which has resulted
-> in HTML files in excess of 200Mb in size.
+> [!CAUTION]
+> The HTML report size depends on the number of LINX plots! We have
+> encountered samples with hundreds of plots which has resulted in HTML
+> files in excess of 200Mb in size.
 
 ## 📦 Installation
 
@@ -34,15 +36,50 @@ remotes::install_github("umccr/linxreport")
 conda install r-linxreport -c conda-forge -c bioconda
 ```
 
-## 💻 CLI
+## ✨ Usage
 
-A `linxreport.R` command line interface is available for convenience.
+You can generate a HTML report within an R session, or from the command
+line.
 
-> [!TIP] If you’re using the conda package, the `linxreport.R` command
-> will already be set up inside an activated conda environment. If
-> you’re *not* using the conda package, you need to export the
+### R
+
+The `linx_rmd` function takes as inputs the directories to the LINX
+tables and plots, along with the file prefix (`sample`) and the path to
+output the HTML to. See `?linx_rmd` for more.
+
+``` r
+d <- system.file("extdata", package = "linxreport")
+linxreport::linx_rmd(
+  sample = "COLO829v003T",
+  table_dir = file.path(d, "tables"),
+  plot_dir = file.path(d, "plots"),
+  out_file = tempfile(fileext = ".html"),
+  quiet = TRUE
+)
+```
+
+### CLI
+
+The `linxreport.R` script is available to generate the HTML report via
+the command line.
+Quick example:
+
+```bash
+linxreport.R \
+  --sample COLO829v003T \
+  --plot inst/extdata/plots \
+  --table inst/extdata/tables \
+  --out COLO829v003T_linx_report.html
+```
+
+> [!TIP]
+> If you’re using the conda package, the `linxreport.R` command will
+> already be set up inside an activated conda environment.
+> If you’re *not* using the conda package, you need to export the
 > `linxreport/inst/cli/` directory to your `PATH` in order to use
 > `linxreport.R`.
+
+See below for required arguments.
 
 ``` bash
 linxr_cli=$(Rscript -e 'x <- system.file("cli", package = "linxreport"); cat(x, "\n")' | xargs)
@@ -56,7 +93,7 @@ export PATH="${linxr_cli}:${PATH}"
     Usage
     =====
      
-    /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/library/linxreport/cli/linxreport.R [options]
+    linxreport/cli/linxreport.R [options]
 
 
     Options
