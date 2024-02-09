@@ -1,6 +1,6 @@
 Package: linxreport
 Title: LINX Result Reporter
-Version: 0.1.0.9000
+Version: 1.0.0
 Description: Generates a HTML report with results from the LINX SV tool
     created by the Hartwig Medical Foundation - see https://github.com/hartwigmedical/hmftools/tree/master/linx.
 Authors@R: 

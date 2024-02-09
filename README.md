@@ -8,9 +8,8 @@ from the `LINX` structural variant tool from the Hartwig Medical
 Foundation - see documentation for LINX at
 <https://github.com/hartwigmedical/hmftools/tree/master/linx>.
 
-For useful functions for parsing and processing `LINX` results, see the
-`{linxreport}` vignette at
-<https://umccr.github.io/linxreport/articles/linx.html>.
+For useful functions for parsing and processing `LINX` results,
+see <https://umccr.github.io/linxreport/reference>.
 
 > [!NOTE]
 > `{linxreport}` does not run any analyses! It simply parses the outputs

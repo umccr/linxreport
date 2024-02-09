@@ -22,8 +22,7 @@ Medical Foundation - see documentation for LINX at
 <https://github.com/hartwigmedical/hmftools/tree/master/linx>.
 
 For useful functions for parsing and processing `LINX` results,
-see the `{linxreport}` vignette at
-<https://umccr.github.io/linxreport/articles/linx.html>.
+see <https://umccr.github.io/linxreport/reference>.
 
 **NOTE**
 
