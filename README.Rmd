@@ -1,8 +1,7 @@
 ---
 output:
   github_document:
-    toc: true
-knit: (knitr::knit)
+    keep_html: true
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -27,15 +26,17 @@ For useful functions for parsing and processing `LINX` results,
 see the `{linxreport}` vignette at
 <https://umccr.github.io/linxreport/articles/linx.html>.
 
-> [!NOTE]
-> {linxreport} does not run any analyses!
-> It simply parses the outputs from LINX
-> and displays them in tables and tabs. No optimisations are performed.
+**NOTE**
 
-> [!CAUTION]
-> The HTML report size depends on the number of LINX plots!
-> We have encountered samples with hundreds of plots which has resulted in
-> HTML files in excess of 200Mb in size.
+`{linxreport}` does not run any analyses!
+It simply parses the outputs from LINX
+and displays them in tables and tabs. No optimisations are performed.
+
+**CAUTION**
+
+The HTML report size depends on the number of LINX plots!
+We have encountered samples with hundreds of plots which has resulted in
+HTML files in excess of 200Mb in size.
 
 ## 📦 Installation
 
@@ -55,11 +56,12 @@ conda install r-linxreport -c conda-forge -c bioconda
 
 A `linxreport.R` command line interface is available for convenience.
 
-> [!TIP]
-> If you're using the conda package, the `linxreport.R` command will already be set up
-> inside an activated conda environment.
-> If you're _not_ using the conda package, you need to export the
-> `linxreport/inst/cli/` directory to your `PATH` in order to use `linxreport.R`.
+**TIP**
+
+- If you're using the conda package, the `linxreport.R` command will already be set up
+inside an activated conda environment.
+- If you're _not_ using the conda package, you need to export the
+`linxreport/inst/cli/` directory to your `PATH` in order to use `linxreport.R`.
 
 ```{bash eval=FALSE}
 linxr_cli=$(Rscript -e 'x <- system.file("cli", package = "linxreport"); cat(x, "\n")' | xargs)
