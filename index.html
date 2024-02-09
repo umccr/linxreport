@@ -67,8 +67,12 @@
 </h1></div>
 <p><a href="https://umccr.github.io/linxreport/">linxreport</a> is an R package for generating a HTML report with results from the <code>LINX</code> structural variant tool from the Hartwig Medical Foundation - see documentation for LINX at <a href="https://github.com/hartwigmedical/hmftools/tree/master/linx" class="external-link uri">https://github.com/hartwigmedical/hmftools/tree/master/linx</a>.</p>
 <p>For useful functions for parsing and processing <code>LINX</code> results, see <a href="https://umccr.github.io/linxreport/reference" class="uri">https://umccr.github.io/linxreport/reference</a>.</p>
-<p><strong>NOTE:</strong> <a href="https://umccr.github.io/linxreport/">linxreport</a> does not run any analyses! It simply parses the outputs from LINX and displays them in tables and tabs. No optimisations are performed.</p>
-<p><strong>CAUTION:</strong> The HTML report size depends on the number of LINX plots! We have encountered samples with hundreds of plots which has resulted in HTML files in excess of 200Mb in size.</p>
+<blockquote>
+<p>[!NOTE] <a href="https://umccr.github.io/linxreport/">linxreport</a> does not run any analyses! It simply parses the outputs from LINX and displays them in tables and tabs. No optimisations are performed.</p>
+</blockquote>
+<blockquote>
+<p>[!CAUTION] The HTML report size depends on the number of LINX plots! We have encountered samples with hundreds of plots which has resulted in HTML files in excess of 200Mb in size.</p>
+</blockquote>
 <div class="section level2">
 <h2 id="id_-installation">📦 Installation<a class="anchor" aria-label="anchor" href="#id_-installation"></a>
 </h2>
@@ -109,7 +113,9 @@
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--plot</span> inst/extdata/plots <span class="dt">\</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">--table</span> inst/extdata/tables <span class="dt">\</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">--out</span> COLO829v003T_linx_report.html</span></code></pre></div>
-  <p><strong>TIP:</strong> If you’re using the conda package, the <code>linxreport.R</code> command will already be set up inside an activated conda environment. If you’re <em>not</em> using the conda package, you need to export the <code>linxreport/inst/cli/</code> directory to your <code>PATH</code> in order to use <code>linxreport.R</code>.</p>
+<blockquote>
+<p>[!TIP] If you’re using the conda package, the <code>linxreport.R</code> command will already be set up inside an activated conda environment. If you’re <em>not</em> using the conda package, you need to export the <code>linxreport/inst/cli/</code> directory to your <code>PATH</code> in order to use <code>linxreport.R</code>.</p>
+</blockquote>
 <p>See below for required arguments.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">linxr_cli</span><span class="op">=</span><span class="va">$(</span><span class="ex">Rscript</span> <span class="at">-e</span> <span class="st">'x &lt;- system.file("cli", package = "linxreport"); cat(x, "\n")'</span> <span class="kw">|</span> <span class="fu">xargs</span><span class="va">)</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="st">"</span><span class="va">${linxr_cli}</span><span class="st">:</span><span class="va">${PATH}</span><span class="st">"</span></span></code></pre></div>
