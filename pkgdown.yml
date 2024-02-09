@@ -2,7 +2,7 @@ pandoc: 2.19.2
 pkgdown: 2.0.7
 pkgdown_sha: ~
 articles: {}
-last_built: 2024-02-09T02:04Z
+last_built: 2024-02-09T02:13Z
 urls:
   reference: https://umccr.github.io/linxreport/reference
   article: https://umccr.github.io/linxreport/articles
