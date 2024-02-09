@@ -29,3 +29,14 @@ Generates a LINX HTML report. It does so with the following steps:
 \item return the path to the output HTML
 }
 }
+\examples{
+d <- system.file("extdata", package = "linxreport")
+outd <- tempdir()
+linx_rmd(
+  sample = "COLO829v003T",
+  table_dir = file.path(d, "tables"),
+  plot_dir = file.path(d, "plots"),
+  out_file = file.path(outd, "test1.html"),
+  quiet = FALSE
+)
+}

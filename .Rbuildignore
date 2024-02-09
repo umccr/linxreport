@@ -3,7 +3,6 @@
 ^\.Rproj\.user$
 ^docs$
 ^\.github$
-^inst/rmd$
 ^LICENSE\.md$
 ^nogit$
 ^_pkgdown\.yml$
@@ -11,3 +10,4 @@
 ^\.pre-commit-config\.yaml$
 ^README\.Rmd$
 ^vignettes$
+^README\.html$

@@ -13,6 +13,16 @@
 #' @param quiet Suppress printing during rendering.
 #'
 #' @return Path to rendered HTML report.
+#' @examples
+#' d <- system.file("extdata", package = "linxreport")
+#' outd <- tempdir()
+#' linx_rmd(
+#'   sample = "COLO829v003T",
+#'   table_dir = file.path(d, "tables"),
+#'   plot_dir = file.path(d, "plots"),
+#'   out_file = file.path(outd, "test1.html"),
+#'   quiet = FALSE
+#' )
 #' @export
 linx_rmd <- function(sample, table_dir, plot_dir, out_file = NULL, quiet = FALSE) {
   assertthat::assert_that(
@@ -29,13 +39,14 @@ linx_rmd <- function(sample, table_dir, plot_dir, out_file = NULL, quiet = FALSE
     out_file <- paste0("linx_", sample, ".html")
   }
   tmp_dir <- tempdir()
-  rmd_dir <- system.file("rmd/linxreport", package = "linxreport")
-  cpdir(table_dir, tmp_dir)
-  cpdir(plot_dir, tmp_dir)
-  cpdir(rmd_dir, tmp_dir)
+  rmd_dir <- system.file("rmd", "linxreport", package = "linxreport")
+  fs::dir_copy(table_dir, tmp_dir)
+  fs::dir_copy(plot_dir, tmp_dir)
+  fs::dir_copy(rmd_dir, tmp_dir)
   rmd_file <- file.path(tmp_dir, "linxreport", "linxreport.Rmd")
-  out_dir <- dirname(out_file)
-  mkdir(out_dir)
+  out_dir <- normalizePath(dirname(out_file))
+  out_file <- basename(out_file)
+  fs::dir_create(out_dir)
   pars <- list(
     table_dir = table_dir,
     plot_dir = plot_dir,

@@ -22,6 +22,7 @@ repos:
         -    details
         -    dplyr
         -    DT
+        -    fs
         -    gtools
         -    optparse
         -    readr
