@@ -1,7 +1,7 @@
 Package: linxreport
-Title: Linx Result Reporter
-Version: 0.1.0
-Description: Generates a HTML report with results from the Linx SV tool
+Title: LINX Result Reporter
+Version: 0.1.0.9000
+Description: Generates a HTML report with results from the LINX SV tool
     created by the Hartwig Medical Foundation - see https://github.com/hartwigmedical/hmftools/tree/master/linx.
 Authors@R: 
     person(given = "Peter",
@@ -15,18 +15,24 @@ License: MIT + file LICENSE
 Depends:
     R (>= 4.1)
 Imports:
-    argparse,
     assertthat,
-    cli,
     details,
     dplyr,
+    DT,
+    fs,
     gtools,
-    knitr,
+    optparse,
     readr,
     rlang,
-    rmarkdown
+    rmarkdown,
+    sessioninfo,
+    stringr
 Suggests:
+    cli,
+    glue,
+    knitr,
     testthat (>= 3.0.0),
+    tibble
 Roxygen: list(markdown = TRUE,
               roclets = c("namespace", "rd", "roxytest::testthat_roclet"))
 biocViews:

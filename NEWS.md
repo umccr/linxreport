@@ -1,5 +1,5 @@
-# gpgr 0.2.0dev
+# linxreport 1.1dev
 
-# gpgr 0.1.0 (2024-02-XX)
+# linxreport 1.0 (2024-02-08)
 
 - Initial release of linxreport. See README.md for details.

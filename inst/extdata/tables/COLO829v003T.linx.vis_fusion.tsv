@@ -1,0 +1,2 @@
+SampleId	ClusterId	Reportable	GeneNameUp	TranscriptUp	ChrUp	PosUp	StrandUp	RegionTypeUp	FusedExonUp	GeneNameDown	TranscriptDown	ChrDown	PosDown	StrandDown	RegionTypeDown	FusedExonDown
+COLO829v003T	610	true	LHFPL6	ENST00000648377	chr13	39223644	-1	INTRONIC	8	ALK	ENST00000618119	chr2	29765729	-1	UPSTREAM	2
