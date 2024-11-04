@@ -14,7 +14,7 @@
 #' @export
 linx_viscopynumber_read <- function(x) {
   nm <- c(
-    SampleId = "c", Chromosome = "c", Start = "i", End = "i",
+    Chromosome = "c", Start = "i", End = "i",
     CopyNumber = "d", BAF = "d"
   )
   ctypes <- paste(nm, collapse = "")
@@ -44,7 +44,7 @@ linx_viscopynumber_read <- function(x) {
 #' @export
 linx_visfusion_read <- function(x) {
   nm <- c(
-    SampleId = "c", ClusterId = "d", Reportable = "c",
+    ClusterId = "d", Reportable = "c",
     GeneNameUp = "c", TranscriptUp = "c", ChrUp = "c",
     PosUp = "d", StrandUp = "d", RegionTypeUp = "c",
     FusedExonUp = "d", GeneNameDown = "c", TranscriptDown = "c",
@@ -74,7 +74,7 @@ linx_visfusion_read <- function(x) {
 #' @export
 linx_visgeneexon_read <- function(x) {
   nm <- c(
-    SampleId = "c", ClusterId = "d", Gene = "c", Transcript = "c",
+    ClusterId = "d", Gene = "c", Transcript = "c",
     Chromosome = "c", AnnotationType = "c", ExonRank = "d",
     ExonStart = "d", ExonEnd = "d"
   )
@@ -83,7 +83,6 @@ linx_visgeneexon_read <- function(x) {
   assertthat::assert_that(ncol(d) == length(nm))
   assertthat::assert_that(all(colnames(d) == names(nm)))
   d |>
-    dplyr::select(-"SampleId") |>
     dplyr::mutate(Chromosome = sub("chr", "", .data$Chromosome)) |>
     dplyr::arrange(.data$ClusterId, .data$Gene, .data$Chromosome) |>
     dplyr::mutate(ClusterId = factor(.data$ClusterId)) |>
@@ -106,7 +105,7 @@ linx_visgeneexon_read <- function(x) {
 #' @export
 linx_visproteindomain_read <- function(x) {
   nm <- c(
-    SampleId = "c", ClusterId = "d", Transcript = "c", Chromosome = "c",
+    ClusterId = "d", Transcript = "c", Chromosome = "c",
     Start = "i", End = "i", Info = "c"
   )
   ctypes <- paste(nm, collapse = "")
@@ -114,7 +113,6 @@ linx_visproteindomain_read <- function(x) {
   assertthat::assert_that(ncol(d) == length(nm))
   assertthat::assert_that(all(colnames(d) == names(nm)))
   d |>
-    dplyr::select(-"SampleId") |>
     dplyr::mutate(Chromosome = sub("chr", "", .data$Chromosome)) |>
     dplyr::arrange(.data$ClusterId, .data$Chromosome, .data$Start) |>
     dplyr::mutate(ClusterId = factor(.data$ClusterId)) |>
@@ -137,7 +135,7 @@ linx_visproteindomain_read <- function(x) {
 #' @export
 linx_vissegments_read <- function(x) {
   nm <- c(
-    SampleId = "c", ClusterId = "d", ChainId = "d", Chromosome = "c",
+    ClusterId = "d", ChainId = "d", Chromosome = "c",
     PosStart = "c", PosEnd = "c", LinkPloidy = "d", InDoubleMinute = "c"
   )
   ctypes <- paste(nm, collapse = "")
@@ -145,7 +143,6 @@ linx_vissegments_read <- function(x) {
   assertthat::assert_that(ncol(d) == length(nm))
   assertthat::assert_that(all(colnames(d) == names(nm)))
   d |>
-    dplyr::select(-"SampleId") |>
     dplyr::mutate(Chromosome = sub("chr", "", .data$Chromosome)) |>
     dplyr::arrange(.data$ClusterId, .data$ChainId, .data$Chromosome) |>
     dplyr::mutate(ClusterId = factor(.data$ClusterId))
@@ -167,7 +164,7 @@ linx_vissegments_read <- function(x) {
 #' @export
 linx_vissvdata_read <- function(x) {
   nm <- c(
-    SampleId = "c", ClusterId = "d", ChainId = "d", SvId = "d",
+    ClusterId = "d", ChainId = "d", SvId = "d",
     Type = "c", ResolvedType = "c", IsSynthetic = "c", ChrStart = "c",
     ChrEnd = "c", PosStart = "d", PosEnd = "d", OrientStart = "d",
     OrientEnd = "d", InfoStart = "c", InfoEnd = "c",
@@ -178,7 +175,6 @@ linx_vissvdata_read <- function(x) {
   assertthat::assert_that(ncol(d) == length(nm))
   assertthat::assert_that(all(colnames(d) == names(nm)))
   d |>
-    dplyr::select(-"SampleId") |>
     dplyr::arrange(.data$ClusterId, .data$ChainId) |>
     dplyr::mutate(ClusterId = factor(.data$ClusterId)) |>
     dplyr::select(
