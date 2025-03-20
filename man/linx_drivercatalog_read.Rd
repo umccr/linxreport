@@ -16,6 +16,6 @@ The input file as a tibble.
 Reads the \code{linx.driver.catalog.tsv} file.
 }
 \examples{
-x <- system.file("extdata/tables/COLO829v003T.linx.driver.catalog.tsv", package = "linxreport")
+x <- system.file("extdata/tables/subject_a.tumor.linx.driver.catalog.tsv", package = "linxreport")
 (l <- linx_drivercatalog_read(x))
 }
