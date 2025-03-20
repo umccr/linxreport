@@ -225,7 +225,7 @@ linx_descr_tab <- function(tab) {
 #'
 #' @return The input file as a tibble.
 #' @examples
-#' x <- system.file("extdata/tables/COLO829v003T.linx.svs.tsv", package = "linxreport")
+#' x <- system.file("extdata/tables/subject_a.tumor.linx.svs.tsv", package = "linxreport")
 #' (l <- linx_svs_read(x))
 #' @testexamples
 #' expect_equal(colnames(l)[ncol(l)], "localTICountEnd")
@@ -243,10 +243,10 @@ linx_svs_read <- function(x) {
 #'
 #' @return The input file as a tibble.
 #' @examples
-#' x <- system.file("extdata/tables/COLO829v003T.linx.breakend.tsv", package = "linxreport")
+#' x <- system.file("extdata/tables/subject_a.tumor.linx.breakend.tsv", package = "linxreport")
 #' (l <- linx_breakend_read(x))
 #' @testexamples
-#' expect_equal(colnames(l)[ncol(l)], "junctionCopyNumber")
+#' expect_equal(colnames(l)[ncol(l)], "exonDown")
 #'
 #' @export
 linx_breakend_read <- function(x) {
@@ -261,7 +261,7 @@ linx_breakend_read <- function(x) {
 #'
 #' @return The input file as a tibble.
 #' @examples
-#' x <- system.file("extdata/tables/COLO829v003T.linx.clusters.tsv", package = "linxreport")
+#' x <- system.file("extdata/tables/subject_a.tumor.linx.clusters.tsv", package = "linxreport")
 #' (l <- linx_clusters_read(x))
 #' @testexamples
 #' expect_equal(colnames(l)[ncol(l)], "clusterDesc")
@@ -279,7 +279,7 @@ linx_clusters_read <- function(x) {
 #'
 #' @return The input file as a tibble.
 #' @examples
-#' x <- system.file("extdata/tables/COLO829v003T.linx.links.tsv", package = "linxreport")
+#' x <- system.file("extdata/tables/subject_a.tumor.linx.links.tsv", package = "linxreport")
 #' (l <- linx_links_read(x))
 #' @testexamples
 #' expect_equal(colnames(l)[ncol(l)], "ecDna")
@@ -297,7 +297,7 @@ linx_links_read <- function(x) {
 #'
 #' @return The input file as a tibble.
 #' @examples
-#' x <- system.file("extdata/tables/COLO829v003T.linx.fusion.tsv", package = "linxreport")
+#' x <- system.file("extdata/tables/subject_a.tumor.linx.fusion.tsv", package = "linxreport")
 #' (l <- linx_fusion_read(x))
 #' @testexamples
 #' expect_equal(colnames(l)[ncol(l)], "junctionCopyNumber")
@@ -315,7 +315,7 @@ linx_fusion_read <- function(x) {
 #'
 #' @return The input file as a tibble.
 #' @examples
-#' x <- system.file("extdata/tables/COLO829v003T.linx.driver.catalog.tsv", package = "linxreport")
+#' x <- system.file("extdata/tables/subject_a.tumor.linx.driver.catalog.tsv", package = "linxreport")
 #' (l <- linx_drivercatalog_read(x))
 #' @testexamples
 #' expect_equal(colnames(l)[ncol(l)], "maxCopyNumber")
@@ -333,7 +333,7 @@ linx_drivercatalog_read <- function(x) {
 #'
 #' @return The input file as a tibble.
 #' @examples
-#' x <- system.file("extdata/tables/COLO829v003T.linx.drivers.tsv", package = "linxreport")
+#' x <- system.file("extdata/tables/subject_a.tumor.linx.drivers.tsv", package = "linxreport")
 #' (l <- linx_drivers_read(x))
 #' @testexamples
 #' expect_equal(colnames(l)[ncol(l)], "eventType")

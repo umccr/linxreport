@@ -1,0 +1,2 @@
+chromosome	chromosomeBand	gene	transcript	isCanonical	driver	category	likelihoodMethod	driverLikelihood	missense	nonsense	splice	inframe	frameshift	biallelic	minCopyNumber	maxCopyNumber
+chr12	p12.1	KRAS	ENST00000311936	true	MUTATION	ONCO	HOTSPOT	1.0000	1	0	0	0	0	false	1.9715	1.9715

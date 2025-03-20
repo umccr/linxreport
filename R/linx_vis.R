@@ -6,7 +6,7 @@
 #'
 #' @return The input file as a tibble.
 #' @examples
-#' x <- system.file("extdata/tables/COLO829v003T.linx.vis_copy_number.tsv", package = "linxreport")
+#' x <- system.file("extdata/tables/subject_a.tumor.linx.vis_copy_number.tsv", package = "linxreport")
 #' (l <- linx_viscopynumber_read(x))
 #' @testexamples
 #' expect_equal(colnames(l)[ncol(l)], "BAF")
@@ -36,7 +36,7 @@ linx_viscopynumber_read <- function(x) {
 #'
 #' @return The input file as a tibble.
 #' @examples
-#' x <- system.file("extdata/tables/COLO829v003T.linx.vis_fusion.tsv", package = "linxreport")
+#' x <- system.file("extdata/tables/subject_a.tumor.linx.vis_fusion.tsv", package = "linxreport")
 #' (l <- linx_visfusion_read(x))
 #' @testexamples
 #' expect_equal(colnames(l)[ncol(l)], "FusedExonDown")
@@ -66,7 +66,7 @@ linx_visfusion_read <- function(x) {
 #'
 #' @return The input file as a tibble.
 #' @examples
-#' x <- system.file("extdata/tables/COLO829v003T.linx.vis_gene_exon.tsv", package = "linxreport")
+#' x <- system.file("extdata/tables/subject_a.tumor.linx.vis_gene_exon.tsv", package = "linxreport")
 #' (l <- linx_visgeneexon_read(x))
 #' @testexamples
 #' expect_equal(colnames(l)[ncol(l)], "ExonEnd")
@@ -97,7 +97,7 @@ linx_visgeneexon_read <- function(x) {
 #'
 #' @return The input file as a tibble.
 #' @examples
-#' x <- system.file("extdata/tables/COLO829v003T.linx.vis_protein_domain.tsv", package = "linxreport")
+#' x <- system.file("extdata/tables/subject_a.tumor.linx.vis_protein_domain.tsv", package = "linxreport")
 #' (l <- linx_visproteindomain_read(x))
 #' @testexamples
 #' expect_equal(colnames(l)[ncol(l)], "Info")
@@ -127,7 +127,7 @@ linx_visproteindomain_read <- function(x) {
 #'
 #' @return The input file as a tibble.
 #' @examples
-#' x <- system.file("extdata/tables/COLO829v003T.linx.vis_segments.tsv", package = "linxreport")
+#' x <- system.file("extdata/tables/subject_a.tumor.linx.vis_segments.tsv", package = "linxreport")
 #' (l <- linx_vissegments_read(x))
 #' @testexamples
 #' expect_equal(colnames(l)[ncol(l)], "InDoubleMinute")
@@ -156,7 +156,7 @@ linx_vissegments_read <- function(x) {
 #'
 #' @return The input file as a tibble.
 #' @examples
-#' x <- system.file("extdata/tables/COLO829v003T.linx.vis_sv_data.tsv", package = "linxreport")
+#' x <- system.file("extdata/tables/subject_a.tumor.linx.vis_sv_data.tsv", package = "linxreport")
 #' (l <- linx_vissvdata_read(x))
 #' @testexamples
 #' expect_equal(colnames(l)[ncol(l)], "InDoubleMinute")

@@ -17,7 +17,7 @@
 #' d <- system.file("extdata", package = "linxreport")
 #' outd <- tempdir()
 #' linx_rmd(
-#'   sample = "COLO829v003T",
+#'   sample = "subject_a.tumor",
 #'   table_dir = file.path(d, "tables"),
 #'   plot_dir = file.path(d, "plots"),
 #'   out_file = file.path(outd, "test1.html"),

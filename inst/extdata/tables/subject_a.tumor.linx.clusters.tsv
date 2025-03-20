@@ -1,0 +1,3 @@
+clusterId	category	synthetic	resolvedType	clusterCount	clusterDesc
+0	SIMPLE	false	SGL_PAIR_INS	2	SGL=2
+1	RECIPROCAL	false	RECIP_TRANS	2	BND=2
