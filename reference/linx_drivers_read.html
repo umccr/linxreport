@@ -29,7 +29,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Read LINX Drivers File</h1>
-      <small class="dont-index">Source: <a href="https://github.com/umccr/linxreport/blob/main/R/linx_tab.R" class="external-link"><code>R/linx_tab.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/umccr/linxreport/blob/v1.1.0/R/linx_tab.R" class="external-link"><code>R/linx_tab.R</code></a></small>
       <div class="d-none name"><code>linx_drivers_read.Rd</code></div>
     </div>
 
@@ -57,10 +57,14 @@
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/tables/subject_a.tumor.linx.drivers.tsv"</span>, package <span class="op">=</span> <span class="st">"linxreport"</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/tables/COLO829v003T.linx.drivers.tsv"</span>, package <span class="op">=</span> <span class="st">"linxreport"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">(</span><span class="va">l</span> <span class="op">&lt;-</span> <span class="fu">linx_drivers_read</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 3</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 3 variables: clusterId &lt;chr&gt;, gene &lt;chr&gt;, eventType &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 3</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   clusterId gene   eventType  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 3         CDKN2A LOH_SV_TELO</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 40        PTEN   LOH_SV_TELO</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 43        PTEN   DEL        </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

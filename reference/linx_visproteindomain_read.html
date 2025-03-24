@@ -29,7 +29,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Read LINX VisProteinDomain File</h1>
-      <small class="dont-index">Source: <a href="https://github.com/umccr/linxreport/blob/main/R/linx_vis.R" class="external-link"><code>R/linx_vis.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/umccr/linxreport/blob/v1.1.0/R/linx_vis.R" class="external-link"><code>R/linx_vis.R</code></a></small>
       <div class="d-none name"><code>linx_visproteindomain_read.Rd</code></div>
     </div>
 
@@ -57,26 +57,13 @@
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/tables/subject_a.tumor.linx.vis_protein_domain.tsv"</span>, package <span class="op">=</span> <span class="st">"linxreport"</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/tables/COLO829v003T.linx.vis_protein_domain.tsv"</span>, package <span class="op">=</span> <span class="st">"linxreport"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">(</span><span class="va">l</span> <span class="op">&lt;-</span> <span class="fu">linx_visproteindomain_read</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 15 × 6</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    ClusterId Transcript      Chrom     Start       End Info         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 1         ENST00000534358 11    118<span style="text-decoration: underline;">436</span>492 118<span style="text-decoration: underline;">436</span>512 5-Prime UTR  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 1         ENST00000534358 11    118<span style="text-decoration: underline;">478</span>078 118<span style="text-decoration: underline;">480</span>195 ZF_CXXC      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 1         ENST00000534358 11    118<span style="text-decoration: underline;">484</span>946 118<span style="text-decoration: underline;">488</span>738 ZF_PHD_2     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 1         ENST00000534358 11    118<span style="text-decoration: underline;">488</span>729 118<span style="text-decoration: underline;">490</span>165 ZF_PHD_2     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 1         ENST00000534358 11    118<span style="text-decoration: underline;">491</span>211 118<span style="text-decoration: underline;">491</span>829 ZF_PHD_2     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 1         ENST00000534358 11    118<span style="text-decoration: underline;">493</span>186 118<span style="text-decoration: underline;">494</span>379 BROMODOMAIN_2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 1         ENST00000534358 11    118<span style="text-decoration: underline;">496</span>342 118<span style="text-decoration: underline;">499</span>307 EPHD         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 1         ENST00000534358 11    118<span style="text-decoration: underline;">499</span>842 118<span style="text-decoration: underline;">501</span>084 FYRN         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 1         ENST00000534358 11    118<span style="text-decoration: underline;">510</span>084 118<span style="text-decoration: underline;">519</span>753 FYRC         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 1         ENST00000534358 11    118<span style="text-decoration: underline;">521</span>305 118<span style="text-decoration: underline;">522</span>133 SET          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> 1         ENST00000534358 11    118<span style="text-decoration: underline;">522</span>157 118<span style="text-decoration: underline;">522</span>205 POST_SET     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> 1         ENST00000534358 11    118<span style="text-decoration: underline;">522</span>173 118<span style="text-decoration: underline;">526</span>832 3-Prime UTR  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> 1         ENST00000380338 9      20<span style="text-decoration: underline;">341</span>669  20<span style="text-decoration: underline;">346</span>442 3-Prime UTR  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> 1         ENST00000380338 9      20<span style="text-decoration: underline;">448</span>125  20<span style="text-decoration: underline;">622</span>253 YEATS        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> 1         ENST00000380338 9      20<span style="text-decoration: underline;">622</span>257  20<span style="text-decoration: underline;">622</span>499 5-Prime UTR  </span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>One or more parsing issues, call `problems()` on your data frame for details,</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> e.g.:</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>   dat &lt;- vroom(...)</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>   problems(dat)</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> ncol(d) not equal to length(nm)</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

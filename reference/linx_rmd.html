@@ -41,7 +41,7 @@ return the path to the output HTML
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Generate LINX HTML Report</h1>
-      <small class="dont-index">Source: <a href="https://github.com/umccr/linxreport/blob/main/R/rmd.R" class="external-link"><code>R/rmd.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/umccr/linxreport/blob/v1.1.0/R/rmd.R" class="external-link"><code>R/rmd.R</code></a></small>
       <div class="d-none name"><code>linx_rmd.Rd</code></div>
     </div>
 
@@ -91,7 +91,7 @@ return the path to the output HTML
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">d</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, package <span class="op">=</span> <span class="st">"linxreport"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">outd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">linx_rmd</span><span class="op">(</span></span></span>
-<span class="r-in"><span>  sample <span class="op">=</span> <span class="st">"subject_a.tumor"</span>,</span></span>
+<span class="r-in"><span>  sample <span class="op">=</span> <span class="st">"COLO829v003T"</span>,</span></span>
 <span class="r-in"><span>  table_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">d</span>, <span class="st">"tables"</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  plot_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">d</span>, <span class="st">"plots"</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  out_file <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">outd</span>, <span class="st">"test1.html"</span><span class="op">)</span>,</span></span>
@@ -108,77 +108,14 @@ return the path to the output HTML
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6/75 [funcs]              </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 7/75                      </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 8/75 [read_tables]        </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> ncol(d) not equal to length(nm)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 9/75                      </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 10/75 [svs0]               </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'tabs' not found</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 11/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12/75 [svs]                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14/75 [blank2]             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16/75 [breakend0]          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18/75 [breakend]           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20/75 [clusters0]          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22/75 [clusters]           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24/75 [links0]             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26/75 [links]              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28/75 [fusion0]            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30/75 [fusion]             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32/75 [drivercatalog0]     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34/75 [drivercatalog]      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36/75 [drivers0]           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38/75 [drivers]            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 39/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40/75 [vis_copy_number0]   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 41/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 42/75 [vis_copy_number]    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 43/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 44/75 [blank1]             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 46/75 [vis_fusion0]        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 47/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 48/75 [vis_fusion]         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 49/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50/75 [vis_gene_exon0]     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 51/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 52/75 [vis_gene_exon]      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 53/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 54/75 [vis_protein_domain0]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 56/75 [vis_protein_domain] </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 57/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 58/75 [vis_segments0]      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 59/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60/75 [vis_segments]       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 61/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 62/75 [vis_sv_data0]       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 63/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 64/75 [vis_sv_data]        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 65/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 66/75 [plot_chrom]         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 67/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 68/75 [plot_cluster]       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 69/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 70/75 [session_info1]      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 71/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 72/75 [session_info2]      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 73/75                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 74/75 [report_inputs]      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75/75                      </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> output file: linxreport.knit.md</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> /opt/hostedtoolcache/pandoc/3.1.11/x64/pandoc +RTS -K512m -RTS linxreport.knit.md --to html4 --from markdown+autolink_bare_uris+tex_math_single_backslash --output /tmp/RtmpM6uKJ8/test1.html --lua-filter /home/runner/work/_temp/Library/rmarkdown/rmarkdown/lua/pagebreak.lua --lua-filter /home/runner/work/_temp/Library/rmarkdown/rmarkdown/lua/latex-div.lua --embed-resources --standalone --variable bs3=TRUE --section-divs --template /home/runner/work/_temp/Library/rmarkdown/rmd/h/default.html --no-highlight --variable highlightjs=1 --include-before-body /tmp/RtmpM6uKJ8/linxreport/_navbar.html --variable navbar=1 --variable theme=cosmo --css style.css --mathjax --variable 'mathjax-url=https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' --include-in-header /tmp/RtmpM6uKJ8/rmarkdown-str1be76ca434a.html --variable source_embed=linxreport.Rmd --include-after-body /tmp/RtmpM6uKJ8/file1be74a61fd70.html --variable code_menu=1 </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(parse_only(code), envir = envir):</span> object 'l' not found</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Output created: /tmp/RtmpM6uKJ8/test1.html</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Quitting from linxreport.Rmd:75-75</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

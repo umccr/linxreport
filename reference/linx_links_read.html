@@ -29,7 +29,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Read LINX Links File</h1>
-      <small class="dont-index">Source: <a href="https://github.com/umccr/linxreport/blob/main/R/linx_tab.R" class="external-link"><code>R/linx_tab.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/umccr/linxreport/blob/v1.1.0/R/linx_tab.R" class="external-link"><code>R/linx_tab.R</code></a></small>
       <div class="d-none name"><code>linx_links_read.Rd</code></div>
     </div>
 
@@ -57,15 +57,26 @@
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/tables/subject_a.tumor.linx.links.tsv"</span>, package <span class="op">=</span> <span class="st">"linxreport"</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/tables/COLO829v003T.linx.links.tsv"</span>, package <span class="op">=</span> <span class="st">"linxreport"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">(</span><span class="va">l</span> <span class="op">&lt;-</span> <span class="fu">linx_links_read</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 17</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 17 variables: clusterId &lt;chr&gt;, chainId &lt;chr&gt;, chainIndex &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   chainCount &lt;dbl&gt;, lowerSvId &lt;chr&gt;, upperSvId &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   lowerBreakendIsStart &lt;chr&gt;, upperBreakendIsStart &lt;chr&gt;, chromosome &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   arm &lt;chr&gt;, assembled &lt;chr&gt;, traversedSVCount &lt;dbl&gt;, length &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   junctionCopyNumber &lt;dbl&gt;, junctionCopyNumberUncertainty &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   pseudogeneInfo &lt;chr&gt;, ecDna &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 27 × 17</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    clusterId chainId chainIndex chainCount lowerSvId upperSvId</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2         0       0                   3 96        97       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2         0       1                   3 96        98       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 11        0       0                   2 78        80       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 14        0       0                   2 84        85       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 16        0       0                   5 87        88       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 16        0       1                   5 91        88       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 16        0       2                   5 91        92       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 16        0       3                   5 92        93       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 27        0       0                   2 147       146      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 25        0       0                   4 23        109      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 17 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 11 more variables: lowerBreakendIsStart &lt;chr&gt;, upperBreakendIsStart &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   chromosome &lt;chr&gt;, arm &lt;chr&gt;, assembled &lt;chr&gt;, traversedSVCount &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   length &lt;dbl&gt;, junctionCopyNumber &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   junctionCopyNumberUncertainty &lt;dbl&gt;, pseudogeneInfo &lt;chr&gt;, ecDna &lt;chr&gt;</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

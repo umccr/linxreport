@@ -29,7 +29,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Read LINX VisGeneExon File</h1>
-      <small class="dont-index">Source: <a href="https://github.com/umccr/linxreport/blob/main/R/linx_vis.R" class="external-link"><code>R/linx_vis.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/umccr/linxreport/blob/v1.1.0/R/linx_vis.R" class="external-link"><code>R/linx_vis.R</code></a></small>
       <div class="d-none name"><code>linx_visgeneexon_read.Rd</code></div>
     </div>
 
@@ -57,22 +57,13 @@
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/tables/subject_a.tumor.linx.vis_gene_exon.tsv"</span>, package <span class="op">=</span> <span class="st">"linxreport"</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/tables/COLO829v003T.linx.vis_gene_exon.tsv"</span>, package <span class="op">=</span> <span class="st">"linxreport"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">(</span><span class="va">l</span> <span class="op">&lt;-</span> <span class="fu">linx_visgeneexon_read</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 47 × 8</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    ClusterId Gene  Transcript    Chrom AnnotationType ExonRank ExonStart ExonEnd</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 1         KMT2A ENST00000534… 11    FUSION                1 118<span style="text-decoration: underline;">436</span>492  1.18<span style="color: #949494;">e</span>8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 1         KMT2A ENST00000534… 11    FUSION                2 118<span style="text-decoration: underline;">468</span>775  1.18<span style="color: #949494;">e</span>8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 1         KMT2A ENST00000534… 11    FUSION                3 118<span style="text-decoration: underline;">471</span>662  1.18<span style="color: #949494;">e</span>8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 1         KMT2A ENST00000534… 11    FUSION                4 118<span style="text-decoration: underline;">476</span>805  1.18<span style="color: #949494;">e</span>8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 1         KMT2A ENST00000534… 11    FUSION                5 118<span style="text-decoration: underline;">477</span>967  1.18<span style="color: #949494;">e</span>8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 1         KMT2A ENST00000534… 11    FUSION                6 118<span style="text-decoration: underline;">480</span>174  1.18<span style="color: #949494;">e</span>8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 1         KMT2A ENST00000534… 11    FUSION                7 118<span style="text-decoration: underline;">481</span>715  1.18<span style="color: #949494;">e</span>8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 1         KMT2A ENST00000534… 11    FUSION                8 118<span style="text-decoration: underline;">482</span>422  1.18<span style="color: #949494;">e</span>8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 1         KMT2A ENST00000534… 11    FUSION                9 118<span style="text-decoration: underline;">484</span>183  1.18<span style="color: #949494;">e</span>8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 1         KMT2A ENST00000534… 11    FUSION               10 118<span style="text-decoration: underline;">484</span>862  1.18<span style="color: #949494;">e</span>8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 37 more rows</span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>One or more parsing issues, call `problems()` on your data frame for details,</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> e.g.:</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>   dat &lt;- vroom(...)</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span>   problems(dat)</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> ncol(d) not equal to length(nm)</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
