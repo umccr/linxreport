@@ -2,57 +2,57 @@
 
 # File R/linx_tab.R: @testexamples
 
-test_that("Function linx_svs_read() @ L240", {
+test_that("Function linx_svs_read() @ L234", {
   
-  x <- system.file("extdata/tables/COLO829v003T.linx.svs.tsv", package = "linxreport")
+  x <- system.file("extdata/tables/subject_a.tumor.linx.svs.tsv", package = "linxreport")
   (l <- linx_svs_read(x))
   expect_equal(colnames(l)[ncol(l)], "localTICountEnd")
 })
 
 
-test_that("Function linx_breakend_read() @ L258", {
+test_that("Function linx_breakend_read() @ L252", {
   
-  x <- system.file("extdata/tables/COLO829v003T.linx.breakend.tsv", package = "linxreport")
+  x <- system.file("extdata/tables/subject_a.tumor.linx.breakend.tsv", package = "linxreport")
   (l <- linx_breakend_read(x))
-  expect_equal(colnames(l)[ncol(l)], "junctionCopyNumber")
+  expect_equal(colnames(l)[ncol(l)], "exonDown")
 })
 
 
-test_that("Function linx_clusters_read() @ L276", {
+test_that("Function linx_clusters_read() @ L270", {
   
-  x <- system.file("extdata/tables/COLO829v003T.linx.clusters.tsv", package = "linxreport")
+  x <- system.file("extdata/tables/subject_a.tumor.linx.clusters.tsv", package = "linxreport")
   (l <- linx_clusters_read(x))
   expect_equal(colnames(l)[ncol(l)], "clusterDesc")
 })
 
 
-test_that("Function linx_links_read() @ L294", {
+test_that("Function linx_links_read() @ L288", {
   
-  x <- system.file("extdata/tables/COLO829v003T.linx.links.tsv", package = "linxreport")
+  x <- system.file("extdata/tables/subject_a.tumor.linx.links.tsv", package = "linxreport")
   (l <- linx_links_read(x))
   expect_equal(colnames(l)[ncol(l)], "ecDna")
 })
 
 
-test_that("Function linx_fusion_read() @ L312", {
+test_that("Function linx_fusion_read() @ L306", {
   
-  x <- system.file("extdata/tables/COLO829v003T.linx.fusion.tsv", package = "linxreport")
+  x <- system.file("extdata/tables/subject_a.tumor.linx.fusion.tsv", package = "linxreport")
   (l <- linx_fusion_read(x))
   expect_equal(colnames(l)[ncol(l)], "junctionCopyNumber")
 })
 
 
-test_that("Function linx_drivercatalog_read() @ L330", {
+test_that("Function linx_drivercatalog_read() @ L324", {
   
-  x <- system.file("extdata/tables/COLO829v003T.linx.driver.catalog.tsv", package = "linxreport")
+  x <- system.file("extdata/tables/subject_a.tumor.linx.driver.catalog.tsv", package = "linxreport")
   (l <- linx_drivercatalog_read(x))
   expect_equal(colnames(l)[ncol(l)], "maxCopyNumber")
 })
 
 
-test_that("Function linx_drivers_read() @ L348", {
+test_that("Function linx_drivers_read() @ L342", {
   
-  x <- system.file("extdata/tables/COLO829v003T.linx.drivers.tsv", package = "linxreport")
+  x <- system.file("extdata/tables/subject_a.tumor.linx.drivers.tsv", package = "linxreport")
   (l <- linx_drivers_read(x))
   expect_equal(colnames(l)[ncol(l)], "eventType")
 })

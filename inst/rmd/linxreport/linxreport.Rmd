@@ -10,7 +10,7 @@ output:
     highlight: kate
 params:
   title: "LINX Reporter"
-  sample: "COLO829v003T"
+  sample: "subject_a.tumor"
   plot_dir: !expr system.file("extdata/plots", package = "linxreport")
   table_dir: !expr system.file("extdata/tables", package = "linxreport")
 description: "LINX Reporter"

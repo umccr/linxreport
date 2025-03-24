@@ -49,7 +49,7 @@ output the HTML to. See `?linx_rmd` for more.
 ``` r
 d <- system.file("extdata", package = "linxreport")
 linxreport::linx_rmd(
-  sample = "COLO829v003T",
+  sample = "subject_a.tumor",
   table_dir = file.path(d, "tables"),
   plot_dir = file.path(d, "plots"),
   out_file = tempfile(fileext = ".html"),
@@ -65,10 +65,10 @@ Quick example:
 
 ```bash
 linxreport.R \
-  --sample COLO829v003T \
+  --sample subject_a.tumor \
   --plot inst/extdata/plots \
   --table inst/extdata/tables \
-  --out COLO829v003T_linx_report.html
+  --out subject_a.tumor_linx_report.html
 ```
 
 > [!TIP]

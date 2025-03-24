@@ -16,6 +16,6 @@ The input file as a tibble.
 Reads the \code{linx.svs.tsv} file.
 }
 \examples{
-x <- system.file("extdata/tables/COLO829v003T.linx.svs.tsv", package = "linxreport")
+x <- system.file("extdata/tables/subject_a.tumor.linx.svs.tsv", package = "linxreport")
 (l <- linx_svs_read(x))
 }

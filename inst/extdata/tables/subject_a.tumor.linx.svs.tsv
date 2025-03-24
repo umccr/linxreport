@@ -1,0 +1,5 @@
+vcfId	svId	clusterId	clusterReason	fragileSiteStart	fragileSiteEnd	isFoldback	lineTypeStart	lineTypeEnd	junctionCopyNumberMin	junctionCopyNumberMax	geneStart	geneEnd	localTopologyIdStart	localTopologyIdEnd	localTopologyStart	localTopologyEnd	localTICountStart	localTICountEnd
+0	0	1	PROXIMITY-1	false	false	false	NONE	NONE	0.1398	1.8327	MLLT3;RNU4-26P	KMT2A	0	1	DSB	DSB	0	0
+1	1	1	PROXIMITY-0	false	false	false	NONE	NONE	0.1412	1.8346	MLLT3;MIR4473;RNU4-26P	KMT2A	0	1	DSB	DSB	0	0
+4	2	0	PROXIMITY-3	false	false	false	NONE	NONE	-0.3092	1.5506	CCNE1		0	-1	DSB		0	0
+5	3	0	PROXIMITY-2	false	false	false	NONE	NONE	-0.0272	1.8848	CCNE1		0	-1	DSB		0	0

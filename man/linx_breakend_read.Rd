@@ -16,6 +16,6 @@ The input file as a tibble.
 Reads the \code{linx.breakend.tsv} file.
 }
 \examples{
-x <- system.file("extdata/tables/COLO829v003T.linx.breakend.tsv", package = "linxreport")
+x <- system.file("extdata/tables/subject_a.tumor.linx.breakend.tsv", package = "linxreport")
 (l <- linx_breakend_read(x))
 }

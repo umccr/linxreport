@@ -16,6 +16,6 @@ The input file as a tibble.
 Reads the \code{linx.vis_protein_domain.tsv} file.
 }
 \examples{
-x <- system.file("extdata/tables/COLO829v003T.linx.vis_protein_domain.tsv", package = "linxreport")
+x <- system.file("extdata/tables/subject_a.tumor.linx.vis_protein_domain.tsv", package = "linxreport")
 (l <- linx_visproteindomain_read(x))
 }

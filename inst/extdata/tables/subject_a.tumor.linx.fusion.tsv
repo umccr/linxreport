@@ -1,0 +1,3 @@
+fivePrimeBreakendId	threePrimeBreakendId	name	reported	reportedType	reportableReasons	phased	likelihood	chainLength	chainLinks	chainTerminated	domainsKept	domainsLost	skippedExonsUp	skippedExonsDown	fusedExonUp	fusedExonDown	geneStart	geneContextStart	transcriptStart	geneEnd	geneContextEnd	transcriptEnd	junctionCopyNumber
+8	11	MLLT3_KMT2A	false	NONE	NOT_KNOWN	INFRAME	NA	0	0	false			0	0	4	11	MLLT3	Exon 4	ENST00000380338	KMT2A	Exon 11	ENST00000534358	0.9879
+3	0	KMT2A_MLLT3	true	KNOWN_PAIR	OK	INFRAME	HIGH	0	0	false		YEATS	0	0	9	5	KMT2A	Exon 9	ENST00000534358	MLLT3	Exon 5	ENST00000380338	0.9863

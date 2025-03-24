@@ -1,0 +1,5 @@
+ClusterId	ChainId	SvId	Type	ResolvedType	IsSynthetic	ChrStart	ChrEnd	PosStart	PosEnd	OrientStart	OrientEnd	InfoStart	InfoEnd	JunctionCopyNumber	InDoubleMinute
+1	1	0	BND	RECIP_TRANS	false	chr9	chr11	20414426	118484974	1	1	NORMAL	NORMAL	0.9863	false
+1	2	1	BND	RECIP_TRANS	false	chr9	chr11	20415001	118485001	-1	-1	NORMAL	NORMAL	0.9879	false
+0	1	2	SGL	SGL_PAIR_INS	false	chr19	-1	29815664	0	1	0	NORMAL		0.6207	false
+0	2	3	SGL	SGL_PAIR_INS	false	chr19	-1	29815665	0	-1	0	NORMAL		0.9288	false

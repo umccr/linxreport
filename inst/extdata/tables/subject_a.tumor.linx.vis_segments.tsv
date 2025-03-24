@@ -1,0 +1,7 @@
+ClusterId	ChainId	Chromosome	PosStart	PosEnd	LinkPloidy	InDoubleMinute
+0	1	chr19	C	29815664	0.6207	false
+0	2	chr19	29815665	T	0.9288	false
+1	1	chr9	T	20414426	0.9863	false
+1	1	chr11	C	118484974	0.9863	false
+1	2	chr9	20415001	C	0.9879	false
+1	2	chr11	118485001	T	0.9879	false

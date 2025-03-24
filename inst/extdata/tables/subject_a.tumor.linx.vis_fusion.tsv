@@ -1,0 +1,2 @@
+ClusterId	Reportable	GeneNameUp	TranscriptUp	ChrUp	PosUp	StrandUp	RegionTypeUp	FusedExonUp	GeneNameDown	TranscriptDown	ChrDown	PosDown	StrandDown	RegionTypeDown	FusedExonDown
+1	true	KMT2A	ENST00000534358	chr11	118484974	1	EXONIC	9	MLLT3	ENST00000380338	chr9	20414426	-1	INTRONIC	5
