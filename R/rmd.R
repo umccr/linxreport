@@ -68,7 +68,7 @@ linx_rmd <- function(sample, table_dir, plot_dir, out_file = NULL, quiet = FALSE
 #'
 #' @param params Parameter list input for the RMarkdown file.
 #'
-#' @return A tibble with path, chrom, and nsegs columns.
+#' @return A tibble with path, chrom, and frame columns.
 #' @export
 linx_path_plot_chr <- function(params) {
   assertthat::assert_that(is.list(params), all(c("sample", "plot_dir") %in% names(params)))
@@ -80,10 +80,10 @@ linx_path_plot_chr <- function(params) {
   }
   d <- stringr::str_match(x, pat) |>
     dplyr::as_tibble(.name_repair = "minimal") |>
-    stats::setNames(c("path", "chrom", "nsegs")) |>
+    stats::setNames(c("path", "chrom", "frame")) |>
     dplyr::mutate(
       path = file.path(params$plot_dir, .data$path),
-      nsegs = as.integer(.data$nsegs)
+      frame = as.integer(.data$frame)
     ) |>
     dplyr::arrange(linxreport::mixedrank(.data$chrom))
   d
@@ -93,11 +93,11 @@ linx_path_plot_chr <- function(params) {
 #'
 #' @param params Parameter list input for the RMarkdown file.
 #'
-#' @return A tibble with path, chrom, and nsegs columns.
+#' @return A tibble with path, clusterId, svCount, and frame columns.
 #' @export
 linx_path_plot_cluster <- function(params) {
   assertthat::assert_that(is.list(params), all(c("sample", "plot_dir") %in% names(params)))
-  pat <- glue::glue("{params$sample}\\.cluster-(\\d+)\\.sv(\\d+)\\.(\\d+)\\.png") |> as.character()
+  pat <- glue::glue("{params$sample}\\.cluster-(\\d+).+\\.sv_count-(\\d+)\\.(\\d+)\\.png") |> as.character()
   x <- list.files(file.path(params$plot_dir), pattern = pat, full.names = TRUE)
   if (length(x) == 0) {
     warning(glue::glue("No LINX cluster plots found in\n{params$plot_dir}."))
@@ -105,10 +105,10 @@ linx_path_plot_cluster <- function(params) {
   }
   d <- stringr::str_match(x, pat) |>
     dplyr::as_tibble(.name_repair = "minimal") |>
-    stats::setNames(c("path", "clusterId", "svId", "nsegs")) |>
+    stats::setNames(c("path", "clusterId", "svCount", "frame")) |>
     dplyr::mutate(
       path = file.path(params$plot_dir, .data$path),
-      nsegs = as.integer(.data$nsegs),
+      svCount = as.integer(.data$svCount),
       clusterId = as.integer(.data$clusterId)
     ) |>
     dplyr::arrange(.data$clusterId) |>
