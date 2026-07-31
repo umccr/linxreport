@@ -2,7 +2,7 @@
 
 # File R/linx_tab.R: @testexamples
 
-test_that("Function linx_svs_read() @ L234", {
+test_that("Function linx_svs_read() @ L235", {
   
   x <- system.file("extdata/tables/subject_a.tumor.linx.svs.tsv", package = "linxreport")
   (l <- linx_svs_read(x))
@@ -10,7 +10,7 @@ test_that("Function linx_svs_read() @ L234", {
 })
 
 
-test_that("Function linx_breakend_read() @ L252", {
+test_that("Function linx_breakend_read() @ L253", {
   
   x <- system.file("extdata/tables/subject_a.tumor.linx.breakend.tsv", package = "linxreport")
   (l <- linx_breakend_read(x))
@@ -18,7 +18,7 @@ test_that("Function linx_breakend_read() @ L252", {
 })
 
 
-test_that("Function linx_clusters_read() @ L270", {
+test_that("Function linx_clusters_read() @ L271", {
   
   x <- system.file("extdata/tables/subject_a.tumor.linx.clusters.tsv", package = "linxreport")
   (l <- linx_clusters_read(x))
@@ -26,7 +26,7 @@ test_that("Function linx_clusters_read() @ L270", {
 })
 
 
-test_that("Function linx_links_read() @ L288", {
+test_that("Function linx_links_read() @ L289", {
   
   x <- system.file("extdata/tables/subject_a.tumor.linx.links.tsv", package = "linxreport")
   (l <- linx_links_read(x))
@@ -34,15 +34,15 @@ test_that("Function linx_links_read() @ L288", {
 })
 
 
-test_that("Function linx_fusion_read() @ L306", {
+test_that("Function linx_fusion_read() @ L307", {
   
   x <- system.file("extdata/tables/subject_a.tumor.linx.fusion.tsv", package = "linxreport")
   (l <- linx_fusion_read(x))
-  expect_equal(colnames(l)[ncol(l)], "junctionCopyNumber")
+  expect_equal(colnames(l)[ncol(l)], "fusedExonDown")
 })
 
 
-test_that("Function linx_drivercatalog_read() @ L324", {
+test_that("Function linx_drivercatalog_read() @ L325", {
   
   x <- system.file("extdata/tables/subject_a.tumor.linx.driver.catalog.tsv", package = "linxreport")
   (l <- linx_drivercatalog_read(x))
@@ -50,7 +50,7 @@ test_that("Function linx_drivercatalog_read() @ L324", {
 })
 
 
-test_that("Function linx_drivers_read() @ L342", {
+test_that("Function linx_drivers_read() @ L343", {
   
   x <- system.file("extdata/tables/subject_a.tumor.linx.drivers.tsv", package = "linxreport")
   (l <- linx_drivers_read(x))
