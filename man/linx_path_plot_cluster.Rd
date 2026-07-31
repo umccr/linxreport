@@ -10,7 +10,7 @@ linx_path_plot_cluster(params)
 \item{params}{Parameter list input for the RMarkdown file.}
 }
 \value{
-A tibble with path, chrom, and nsegs columns.
+A tibble with path, clusterId, svCount, and frame columns.
 }
 \description{
 Cluster Plot Paths

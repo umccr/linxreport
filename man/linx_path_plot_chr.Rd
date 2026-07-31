@@ -10,7 +10,7 @@ linx_path_plot_chr(params)
 \item{params}{Parameter list input for the RMarkdown file.}
 }
 \value{
-A tibble with path, chrom, and nsegs columns.
+A tibble with path, chrom, and frame columns.
 }
 \description{
 Chromosome Plot Paths
