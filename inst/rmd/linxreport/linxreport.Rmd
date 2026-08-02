@@ -266,7 +266,7 @@ if (!is.null(chrom_plots)) {
   for (i in seq_len(nrow(chrom_plots))) {
     r <- chrom_plots[i, ]
     cat(glue("\n### chr{r$chrom}"), "\n")
-    cat(glue("\nnsegs: {as.integer(r$nsegs)}"), "\n\n\n")
+    cat(glue("\nframe: {as.integer(r$frame)}"), "\n\n\n")
     cat(glue("<img src=\"{r$path}\" height=\"1000\"/>"), "\n\n\n")
     blank_lines(1)
     cat("\n\n\n")
@@ -287,7 +287,7 @@ if (!is.null(cluster_plots)) {
     cat(glue("\n### {r$clusterId}"), "\n\n\n")
     cat(glue(
       "clusterId: {r$clusterId} | ",
-      "svId: {r$svId} | nsegs: {r$nsegs}"
+      "svCount: {r$svCount} | frame: {r$frame}"
     ), "\n\n\n")
     cat(glue("<img src=\"{r$path}\" height=\"1000\"/>"), "\n\n\n")
     blank_lines(2)

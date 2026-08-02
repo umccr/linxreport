@@ -1,7 +1,11 @@
 LINX_DESCRIPTIONS <- dplyr::tribble(
   ~Table, ~Field, ~Type, ~Description,
-  "svs", "vcfId", "c", "ID of break junction for mapping to GRIDSS / PURPLE vcf",
+  "svs", "vcfIdStart", "c", "Start ID of break junction for mapping to PURPLE vcf",
+  "svs", "vcfIdEnd", "c", "End ID of break junction for mapping to PURPLE vcf",
   "svs", "svId", "c", "ID of break junction",
+  "svs", "coordsStart", "c", "Start coordinate of break junction for mapping to PURPLE vcf",
+  "svs", "coordsEnd", "c", "End coordinate of break junction for mapping to PURPLE vcf",
+  "svs", "type", "c", "SV type",
   "svs", "clusterId", "c", "ID of cluster which break junction is assigned to",
   "svs", "clusterReason", "c", paste0(
     "Reason for clustering and svId of clustered break ",
@@ -16,8 +20,6 @@ LINX_DESCRIPTIONS <- dplyr::tribble(
   "svs", "junctionCopyNumberMax", "d", "Maximum bound JCN estimate for breakjunction",
   "svs", "geneStart", "c", "Gene(s) overlapping start breakend of SV",
   "svs", "geneEnd", "c", "Gene(s) overlapping end breakend of SV",
-  # "svs", "replicationTimingStart", "d", ".",
-  # "svs", "replicationTimingEnd", "d", ".",
   "svs", "localTopologyIdStart", "c", paste0(
     "ID for group of proximate breakends to the ",
     "start breakend of break junction within an extending 5kb window"
@@ -38,8 +40,10 @@ LINX_DESCRIPTIONS <- dplyr::tribble(
   ),
   "svs", "localTICountStart", "d", "Number of chained templated insertions in local topology group of start breakend",
   "svs", "localTICountEnd", "d", "Number of chained templated insertions in local topology group of end breakend",
-  "breakend", "id", "c", "Id of breakend annotation",
-  "breakend", "svId", "c", "Id of break junction",
+  "breakend", "id", "c", "ID of breakend annotation",
+  "breakend", "svId", "c", "SV ID of break junction",
+  "breakend", "vcfId", "c", "VCF ID of break junction",
+  "breakend", "coords", "c", "Coordinates of break junction",
   "breakend", "isStart", "c", "Annotation relates to the start breakend of the break junction (1 = true,0 = false)",
   "breakend", "gene", "c", "Gene annotated",
   "breakend", "transcriptId", "c", "Ensembl stable transcript id of annotation",
@@ -54,7 +58,7 @@ LINX_DESCRIPTIONS <- dplyr::tribble(
     "gene taking into account both gene strand and breakend orientation."
   ),
   "breakend", "disruptive", "c", "Breakend is part of a break junction which disrupts the exonic sequence of the transcript",
-  "breakend", "reportedDisruption", "c", "Breakend is disruptive and gene is flagged as reportable for disruption",
+  "breakend", "reportedStatus", "c", "Breakend is disruptive and gene is flagged as reportable",
   "breakend", "undisruptedCopyNumber", "d", paste0(
     "Number of remaining wildtype alleles of the gene that ",
     "are not disrupted by the breakend.  If <0.5 then disruption is considered Homozygous"
@@ -81,7 +85,7 @@ LINX_DESCRIPTIONS <- dplyr::tribble(
   "breakend", "totalExonCount", "d", "Total number of exons in the transcript",
   "breakend", "exonUp", "d", ".",
   "breakend", "exonDown", "d", ".",
-  "clusters", "clusterId", "c", "Unique Id for the cluster",
+  "clusters", "clusterId", "c", "Unique ID for the cluster",
   "clusters", "category", "c", "High level categorisation of the cluster classification",
   "clusters", "synthetic", "c", paste0(
     "Set to TRUE if the cluster is resolved to a non complex ",
@@ -90,9 +94,9 @@ LINX_DESCRIPTIONS <- dplyr::tribble(
   "clusters", "resolvedType", "c", "Resolved classification of the cluster.",
   "clusters", "clusterCount", "d", "The number of break junctions in the cluster",
   "clusters", "clusterDesc", "c", "String containing the types and counts of break junctions in the cluster. eg. DEL=2_INV=2",
-  "links", "clusterId", "c", "Id of the cluster which contains the link",
+  "links", "clusterId", "c", "ID of the cluster which contains the link",
   "links", "chainId", "c", paste0(
-    "Id of the chain to which the link belongs representing a ",
+    "ID of the chain to which the link belongs representing a ",
     "multi-segment prediction of the derivative chromosome"
   ),
   "links", "chainIndex", "c", paste0(
@@ -106,7 +110,7 @@ LINX_DESCRIPTIONS <- dplyr::tribble(
   "links", "upperBreakendIsStart", "c", "True if the right breakend is the start breakend of the break junction",
   "links", "chromosome", "c", "Chromosome of the linked segment",
   "links", "arm", "c", "Arm (P/Q) of the linked segment",
-  "links", "assembled", "c", "True if the segment is linked by a GRIDSS assembly",
+  "links", "assembled", "c", "True if the segment is linked by a ESVEE assembly",
   "links", "traversedSVCount", "d", "The number of other breakends that are located on the linked segment",
   "links", "length", "d", "Length of the linked segment",
   "links", "junctionCopyNumber", "d", "Predicted copy number of the chain",
@@ -116,8 +120,8 @@ LINX_DESCRIPTIONS <- dplyr::tribble(
     "then contains details of the matching exon:  {geneName;TranscriptId,ExonRank,ExonLength}"
   ),
   "links", "ecDna", "c", "True if the link is predicted to be part of a DM / ecDNA chain",
-  "fusion", "fivePrimeBreakendId", "c", "Id of the 5' breakend in the fusion",
-  "fusion", "threePrimeBreakendId", "c", "Id of the 3' breakend in the fusion",
+  "fusion", "fivePrimeBreakendId", "c", "ID of the 5' breakend in the fusion",
+  "fusion", "threePrimeBreakendId", "c", "ID of the 3' breakend in the fusion",
   "fusion", "name", "c", "Name of the fusion in the form 5'GENE_3'GENE",
   "fusion", "reported", "c", "True if the fusion meets all reportable fusion criteria for LINX",
   "fusion", "reportedType", "c", paste0(
@@ -129,6 +133,10 @@ LINX_DESCRIPTIONS <- dplyr::tribble(
   "fusion", "reportableReasons", "c", "Reasons for given reportable status",
   "fusion", "phased", "c", "Set to 1 if a phased fusion can be formed (after allowing for exon skipping)",
   "fusion", "likelihood", "c", ".",
+  "fusion", "fivePrimeVcfId", "c", "ID of the 5' VCF record in the fusion",
+  "fusion", "threePrimeVcfId", "c", "ID of the 3' VCF record in the fusion",
+  "fusion", "fivePrimeCoords", "c", "Coordinates of the 5' breakend in the fusion",
+  "fusion", "threePrimeCoords", "c", "Coordinates of the 3' breakend in the fusion",
   "fusion", "chainLength", "d", "0 for simple fusions.  If fusion is chained equal to the total length of segments chained between 5' and 3' partners",
   "fusion", "chainLinks", "d", "0 for simple fusions.  If fusion is chained equal to the number of segments chained between 5' and 3' partners",
   "fusion", "chainTerminated", "c", paste0(
@@ -142,13 +150,6 @@ LINX_DESCRIPTIONS <- dplyr::tribble(
   "fusion", "skippedExonsDown", "d", "Count of splice donors required to be skipped on 3' partner side to form an inframe fusion",
   "fusion", "fusedExonUp", "d", "Last exon fused on 5' partner side",
   "fusion", "fusedExonDown", "d", "First exon fused on 3' partner side",
-  "fusion", "geneStart", "c", ".",
-  "fusion", "geneContextStart", "c", ".",
-  "fusion", "transcriptStart", "c", ".",
-  "fusion", "geneEnd", "c", ".",
-  "fusion", "geneContextEnd", "c", ".",
-  "fusion", "transcriptEnd", "c", ".",
-  "fusion", "junctionCopyNumber", "d", ".",
   "drivercatalog", "chromosome", "c", "Chromosome of gene",
   "drivercatalog", "chromosomeBand", "c", "Chromosome band of driver",
   "drivercatalog", "gene", "c", "Gene name",
@@ -157,8 +158,8 @@ LINX_DESCRIPTIONS <- dplyr::tribble(
   "drivercatalog", "driver", "c", "Driver type [AMP, DEL, MUTATION]",
   "drivercatalog", "category", "c", "Gene driver type [ONCO, TSG]",
   "drivercatalog", "likelihoodMethod", "c", "Method used to determine likelihood [AMP, DEL, BIALLELIC, DNDS, HOTSPOT, INFRAME]",
+  "drivercatalog", "reportedStatus", "c", "Breakend is disruptive and gene is flagged as reportable",
   "drivercatalog", "driverLikelihood", "d", "Likelihood that gene is a driver",
-  # "drivercatalog", "NA", "c", ".",
   "drivercatalog", "missense", "d", "Number of missense variants in gene",
   "drivercatalog", "nonsense", "d", "Number of nonsense variants in gene",
   "drivercatalog", "splice", "d", "Number of splice variants in gene",
@@ -167,7 +168,7 @@ LINX_DESCRIPTIONS <- dplyr::tribble(
   "drivercatalog", "biallelic", "c", "True if any variants in the gene are biallelic",
   "drivercatalog", "minCopyNumber", "d", "Minimum copy number found in the gene exons",
   "drivercatalog", "maxCopyNumber", "d", "Maximum copy number found in the gene exons",
-  "drivers", "clusterId", "c", "Id of cluster which break junction associated with driver. Set to -1 for ARM or CHR level events.",
+  "drivers", "clusterId", "c", "ID of cluster which break junction associated with driver. Set to -1 for ARM or CHR level events.",
   "drivers", "gene", "c", "Gene of driver. Multiple clusters may be linked to a gene for a sample",
   "drivers", "eventType", "c", paste0(
     "Type of driver. [GAIN (amplification by SV), GAIN_ARM (amplification of whole arm), ",
@@ -300,7 +301,7 @@ linx_links_read <- function(x) {
 #' x <- system.file("extdata/tables/subject_a.tumor.linx.fusion.tsv", package = "linxreport")
 #' (l <- linx_fusion_read(x))
 #' @testexamples
-#' expect_equal(colnames(l)[ncol(l)], "junctionCopyNumber")
+#' expect_equal(colnames(l)[ncol(l)], "fusedExonDown")
 #'
 #' @export
 linx_fusion_read <- function(x) {
