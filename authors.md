@@ -8,7 +8,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/umccr/linxreport/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/umccr/linxreport/blob/v1.2.0/DESCRIPTION)
 
 Diakumis P (2026). *linxreport: LINX Result Reporter*. R package version
 1.2.0, <https://umccr.github.io/linxreport/>.
